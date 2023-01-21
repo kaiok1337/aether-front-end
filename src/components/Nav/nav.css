@@ -1,0 +1,38 @@
+
+
+.logo {
+    width: 40em;
+    padding: 1em;
+    
+}
+
+.nav-main {
+    display: flex;
+    justify-content: center;
+    
+}
+
+nav, .nav-div {
+    display: flex;
+}
+
+.nav-btn {
+    text-decoration: none;
+    font-size: 1.6em;
+    padding: 1em;
+    text-shadow: 5px 8px black;
+}
+
+* {
+    color: white
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 20em;
+    }
+
+    nav, .nav-div,.nav-main {
+        flex-direction: column;
+    }
+  }
