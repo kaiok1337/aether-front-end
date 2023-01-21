@@ -30,7 +30,7 @@ function Product() {
           }
         };
         
-        await axios.post("http://localhost:8000/cart", productToAdd, config)
+        await axios.post("https://aether-web-store-api.herokuapp.com/cart", productToAdd, config)
         
       }
     
