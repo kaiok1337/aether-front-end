@@ -42,3 +42,20 @@ $animationSpeed: 40s;
 		width: 900px;
 	}
 }
+
+@media screen and (max-width: 480px) {
+	.slider {
+		height: 20em;
+	}
+
+	.slide {
+		
+		width: fit-content;
+	}
+
+	.slide img {
+		width: fit-content;
+		height: 20em;
+	}
+	
+}
