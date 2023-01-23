@@ -14,7 +14,7 @@ function Nav({setUser, isLoggedIn, setIsLoggedIn, cartItems}) {
 
     return(
         <main className='nav-main'>
-            <img className="logo" src='images/logo.png'></img>
+            <img className="logo" src='%PUBLIC_URL%/images/logo.png'></img>
             <nav>
                 <Link className='nav-btn' to="/" >H O M E</Link>
                 { !isLoggedIn ?
