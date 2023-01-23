@@ -13,22 +13,22 @@ function Home({setIsLoggedIn, isLoggedIn, user}) {
       <div className="slider">
         <div className="slide-track">
           <div className="slide">
-            <img src='https://media4.giphy.com/media/G7BePQkFRfh06oumYF/giphy.gif' />
+            <a href='https://www.youtube.com/watch?v=wBdxYejGL6k&ab_channel=AetherWave'><img src='https://media4.giphy.com/media/G7BePQkFRfh06oumYF/giphy.gif' /></a>
           </div>
           <div className="slide">
-            <img src='https://media1.giphy.com/media/3CHwqmSyWf7SCOQNKT/giphy.gif?cid=790b761113c4cc7e06bb3c0c52c50cbbfff94fccd190d278&rid=giphy.gif&ct=g' />
+            <a href='https://www.youtube.com/watch?v=vZnwdgM28nE&ab_channel=AetherWave'><img src='https://media1.giphy.com/media/3CHwqmSyWf7SCOQNKT/giphy.gif?cid=790b761113c4cc7e06bb3c0c52c50cbbfff94fccd190d278&rid=giphy.gif&ct=g' /></a>
           </div>
           <div className="slide">
-          <img src='https://media1.giphy.com/media/02UzDcR6hrAcW2SpSK/giphy.gif' />
+            <a href='https://www.youtube.com/watch?v=g8efB0THJOA&ab_channel=AetherWave'><img src='https://media1.giphy.com/media/02UzDcR6hrAcW2SpSK/giphy.gif' /></a>
           </div>
           <div className="slide">
-          <img src='https://media4.giphy.com/media/cZMJRTgPXEVdRlk4Uw/giphy.gif?cid=790b761102298c4338c4810e987ac3e5a389a5235900f1f6&rid=giphy.gif&ct=g' />
+            <a href='https://www.youtube.com/watch?v=Xi1FSF8lOVg&ab_channel=AetherWave'><img src='https://media4.giphy.com/media/cZMJRTgPXEVdRlk4Uw/giphy.gif?cid=790b761102298c4338c4810e987ac3e5a389a5235900f1f6&rid=giphy.gif&ct=g' /></a>
           </div>
           <div className="slide">
-          <img src='https://media4.giphy.com/media/cZMJRTgPXEVdRlk4Uw/giphy.gif?cid=790b761102298c4338c4810e987ac3e5a389a5235900f1f6&rid=giphy.gif&ct=g' />
+            <a href='https://www.youtube.com/watch?v=Xi1FSF8lOVg&ab_channel=AetherWave'><img src='https://media4.giphy.com/media/cZMJRTgPXEVdRlk4Uw/giphy.gif?cid=790b761102298c4338c4810e987ac3e5a389a5235900f1f6&rid=giphy.gif&ct=g' /></a>
           </div>
           <div className="slide">
-          <img src='https://media4.giphy.com/media/cZMJRTgPXEVdRlk4Uw/giphy.gif?cid=790b761102298c4338c4810e987ac3e5a389a5235900f1f6&rid=giphy.gif&ct=g' />
+            <a href='https://www.youtube.com/watch?v=Xi1FSF8lOVg&ab_channel=AetherWave'><img src='https://media4.giphy.com/media/cZMJRTgPXEVdRlk4Uw/giphy.gif?cid=790b761102298c4338c4810e987ac3e5a389a5235900f1f6&rid=giphy.gif&ct=g' /></a>
           </div>
         </div>
 
