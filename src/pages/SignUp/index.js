@@ -13,6 +13,8 @@ export default function SignUp({setIsLoggedIn, isLoggedIn, setToken}) {
         email: '',
         roles: 'user'
     })
+    const [errState, setErrState] = useState(false)
+
     const navigate = useNavigate()
 
     // update the input value as a user types
@@ -22,9 +24,14 @@ export default function SignUp({setIsLoggedIn, isLoggedIn, setToken}) {
 
     async function submitHandler(event) {
         event.preventDefault()
-        const { data } = await axios.post('https://aether-web-store-api.herokuapp.com/auth/register', formState)
-        setToken(data.token)
-        navigate('/')
+        try {
+            const { data } = await axios.post('https://aether-web-store-api.herokuapp.com/auth/register', formState)
+            setToken(data.token)
+            navigate('/')
+        } catch(err) {
+            setErrState(true)
+        }
+        
     }
 
     
@@ -41,8 +48,13 @@ export default function SignUp({setIsLoggedIn, isLoggedIn, setToken}) {
                         type='text'
                         name='username'
                         onChange={handleChange}
-                        value={formState.username} />
+                        value={formState.username} 
+                        required/>
                 </div>
+
+                { errState ?
+                    <p className='error' >username is already taken</p>
+                : null}
 
                 <div className="input-texts">
                     <label htmlFor='password'>Password</label>
@@ -50,7 +62,8 @@ export default function SignUp({setIsLoggedIn, isLoggedIn, setToken}) {
                         type='password'
                         name='password'
                         onChange={handleChange}
-                        value={formState.password} />
+                        value={formState.password} 
+                        required/>
                 </div>
 
                 <div className="input-texts">
@@ -59,7 +72,8 @@ export default function SignUp({setIsLoggedIn, isLoggedIn, setToken}) {
                         type='text'
                         name='email'
                         onChange={handleChange}
-                        value={formState.email} />
+                        value={formState.email} 
+                        required/>
                 </div>
 
                 <button type='submit' class="sign-button" >Sign Up</button>

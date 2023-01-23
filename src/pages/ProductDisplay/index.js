@@ -10,7 +10,6 @@ export default function ProductDisplay({isLoggedIn}) {
 
     async function getProductInfo() {
         const infoData = await axios.get(`https://aether-web-store-api.herokuapp.com/products/${handle}`)
-        console.log(infoData.data)
         setProduct(infoData.data)
       }
     
@@ -21,7 +20,6 @@ export default function ProductDisplay({isLoggedIn}) {
             quantity: 1,
             productId: product._id
         }
-        console.log(productToAdd)
         let bearerToken = localStorage.getItem('token')
         const config = {
           headers:{

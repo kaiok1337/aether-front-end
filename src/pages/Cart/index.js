@@ -37,7 +37,6 @@ function Cart({user, cartItems, setCartItems}) {
         
       }, [])
 
-      console.log(cartItems)
     return(
         <main className='cart'>
             <h2>Shopping Cart</h2>

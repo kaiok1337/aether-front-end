@@ -32,7 +32,6 @@ function App() {
         localStorage.token = token
         getUser()
         setIsLoggedIn(true)
-        console.log(user)
     }
   }, [token])
 

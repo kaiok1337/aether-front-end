@@ -11,6 +11,7 @@ export default function LogIn ({setIsLoggedIn , isLoggedIn, setToken, token}) {
         password: '',
     })
     const [modalIsOpen, setIsOpen] = useState(false)
+    const [errState, setErrState] = useState(false)
 
     // update the input value as a user types
     const handleChange = (event) => {
@@ -19,8 +20,13 @@ export default function LogIn ({setIsLoggedIn , isLoggedIn, setToken, token}) {
 
     async function submitHandler(event) {
         event.preventDefault()
-        const { data } = await axios.post('https://aether-web-store-api.herokuapp.com/auth/login', formState)
-        setToken(data.token)
+        try { 
+            const { data } = await axios.post('https://aether-web-store-api.herokuapp.com/auth/login', formState)
+            setToken(data.token)
+        } catch(err) {
+            setErrState(true)
+        }
+        
     }
 
     function openModal() {
@@ -78,7 +84,9 @@ export default function LogIn ({setIsLoggedIn , isLoggedIn, setToken, token}) {
                         onChange={handleChange}
                         value={formState.password} />
                 </div>
-                
+                { errState ?
+                    <p className="error">Incorrect username/password</p>
+                : null}
                 <button type='submit' className="button-login" >Login</button>
                 <p> or </p>
                 <a href='/signup' className='create-acc'>create account</a>

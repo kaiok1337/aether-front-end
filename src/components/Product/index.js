@@ -15,7 +15,6 @@ function Product({user}) {
 
     async function getProductInfo() {
       const infoData = await axios.get("https://aether-web-store-api.herokuapp.com/products")
-      console.log(infoData.data)
       setInfo(infoData.data)
     }
 
@@ -26,8 +25,7 @@ function Product({user}) {
     useEffect(() => {
         getProductInfo()
       }, [])
-
-    console.log(info)
+      
     return(
         <main>
           
