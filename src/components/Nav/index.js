@@ -2,6 +2,7 @@ import './nav.css'
 import LogIn from '../LogIn'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import logo from '../../images/logo.PNG'
 
 function Nav({setUser, isLoggedIn, setIsLoggedIn, cartItems}) {
     const [rerender, setRerender] = useState(false)
@@ -14,7 +15,7 @@ function Nav({setUser, isLoggedIn, setIsLoggedIn, cartItems}) {
 
     return(
         <main className='nav-main'>
-            <img className="logo" src='%PUBLIC_URL%/images/logo.png'></img>
+            <img className="logo" src={logo}></img>
             <nav>
                 <Link className='nav-btn' to="/" >H O M E</Link>
                 { !isLoggedIn ?
