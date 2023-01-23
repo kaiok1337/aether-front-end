@@ -14,6 +14,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const [cartItems, setCartItems] = useState([])
+  const [token, setToken] = useState('')
 
   async function getUser(){
     let bearerToken = localStorage.getItem('token')
@@ -27,22 +28,23 @@ function App() {
   }
 
   useEffect(() => {
-    if (localStorage.token) {
+    if (token){
+        localStorage.token = token
         getUser()
         setIsLoggedIn(true)
         console.log(user)
     }
-  }, [localStorage.token])
+  }, [token])
 
   return (
     <main>
-      <Nav setUser={setUser} cartItems={cartItems} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Nav setUser={setUser} token={token} setToken={setToken} cartItems={cartItems} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Routes>
         <Route path="*" element={<FourOhFour />}></Route>
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} user={user}/>}></Route>
-        <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn}/>}></Route>
-        <Route path="/" element={<Home user={user} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
-        <Route path="/product/:handle" element={<ProductDisplay />}></Route>
+        <Route path="/signup" element={<SignUp setToken={setToken} setIsLoggedIn={setIsLoggedIn}/>}></Route>
+        <Route path="/" element={<Home  user={user} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
+        <Route path="/product/:handle" element={<ProductDisplay isLoggedIn={isLoggedIn} />}></Route>
       </Routes>
     </main>
   );

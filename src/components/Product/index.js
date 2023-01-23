@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './product.css'
 
-function Product() {
+function Product({user}) {
     const [info, setInfo] = useState([])
     const navigate = useNavigate()
 
@@ -38,6 +38,9 @@ function Product() {
               <h2>{product.name}</h2>
               <p>${product.price}</p>
               <img className='card-img' src={product.imgUrl}/>
+              { user.role === 'admin' ? 
+              <button onClick={() => deleteProduct(product._id)} >delete</button>
+            : null}
             </div>
             )}
           </section>

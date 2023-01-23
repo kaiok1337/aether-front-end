@@ -4,7 +4,7 @@ import './login.css'
 import Modal from 'react-modal';
 
 
-export default function LogIn ({setIsLoggedIn , isLoggedIn}) {
+export default function LogIn ({setIsLoggedIn , isLoggedIn, setToken, token}) {
     // state declarations
     const [formState, setFormState] = useState({
         username: '',
@@ -20,8 +20,7 @@ export default function LogIn ({setIsLoggedIn , isLoggedIn}) {
     async function submitHandler(event) {
         event.preventDefault()
         const { data } = await axios.post('https://aether-web-store-api.herokuapp.com/auth/login', formState)
-        localStorage.token = data.token
-        setIsLoggedIn(true)
+        setToken(data.token)
     }
 
     function openModal() {
@@ -79,8 +78,10 @@ export default function LogIn ({setIsLoggedIn , isLoggedIn}) {
                         onChange={handleChange}
                         value={formState.password} />
                 </div>
-
+                
                 <button type='submit' className="button-login" >Login</button>
+                <p> or </p>
+                <a href='/signup' className='create-acc'>create account</a>
             </form>
             </Modal>
             

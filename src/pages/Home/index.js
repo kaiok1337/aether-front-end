@@ -34,8 +34,9 @@ function Home({setIsLoggedIn, isLoggedIn, user}) {
 
       </div>
       <br />
-      <h1>M E R C H</h1>
-      <Product/>
+      <h1 className="merch">M E R C H</h1>
+      <h1>. . .</h1>
+      <Product user={user}/>
       <Spotify  link="https://open.spotify.com/artist/7Jtn7Qm47bezv1myVrZIZo?si=DOnmq_uIQ2CrgXuahmPncg" />
     </div>
     )

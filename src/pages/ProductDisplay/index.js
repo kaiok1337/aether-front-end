@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import './product.css'
 
 
-export default function ProductDisplay() {
+export default function ProductDisplay({isLoggedIn}) {
     const [product, setProduct] = useState({})
     const { handle } = useParams()
 
@@ -39,9 +39,17 @@ export default function ProductDisplay() {
     
       return(
         <main>
-            <h1 className="product-title">{product.name}</h1>
-            <img className="product-img" src={product.imgUrl}/>
-            <button onClick={() => addToCart(product)}>Add to cart</button>
+            <div className='info-card'>
+                <div>
+                    <h1 className="product-title">{product.name}</h1>
+                    <p>{product.description}</p>
+                </div>
+                
+                <img className="product-img" src={product.imgUrl}/>
+                { isLoggedIn ?
+                <button className='add-to-cart' onClick={() => addToCart(product)}>Add to cart</button>
+                : null}
+            </div>
         </main>
         
 

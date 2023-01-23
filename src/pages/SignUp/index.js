@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useEffect} from 'react';
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
+import './signup.css'
 
 
-export default function SignUp({setIsLoggedIn, isLoggedIn}) {
+export default function SignUp({setIsLoggedIn, isLoggedIn, setToken}) {
     // state declarations
     const [formState, setFormState] = useState({
         username: '',
@@ -12,6 +13,7 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
         email: '',
         roles: 'user'
     })
+    const navigate = useNavigate()
 
     // update the input value as a user types
     const handleChange = (event) => {
@@ -20,21 +22,16 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
 
     async function submitHandler(event) {
         event.preventDefault()
-        console.log(formState)
-        await axios.post('https://aether-web-store-api.herokuapp.com/auth/register', formState)
-        setIsLoggedIn(true)
+        const { data } = await axios.post('https://aether-web-store-api.herokuapp.com/auth/register', formState)
+        setToken(data.token)
+        navigate('/')
     }
 
-    const navigate = useNavigate()
     
-    useEffect(() => {
-        if (isLoggedIn) {
-            navigate('/')
-        }
-    }, [])
+    
 
     return (
-        <div className="containers">
+        <div className="signup">
             <h2 className="heading">Sign Up</h2>
 
             <form onSubmit={submitHandler}>
@@ -65,7 +62,7 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
                         value={formState.email} />
                 </div>
 
-                <button type='submit' class="buttons" >Sign Up</button>
+                <button type='submit' class="sign-button" >Sign Up</button>
             </form>
         </div>
     )

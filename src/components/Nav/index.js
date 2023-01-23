@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import logo from '../../images/logo.PNG'
 
-function Nav({setUser, isLoggedIn, setIsLoggedIn, cartItems}) {
+function Nav({setUser, isLoggedIn, setIsLoggedIn, setToken, token}) {
     const [rerender, setRerender] = useState(false)
 
     function logout() {
@@ -20,7 +20,7 @@ function Nav({setUser, isLoggedIn, setIsLoggedIn, cartItems}) {
                 <Link className='nav-btn' to="/" >H O M E</Link>
                 { !isLoggedIn ?
                 <div className='nav-div'>
-                    <LogIn isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+                    <LogIn token={token} setToken={setToken} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 </div>
                 :
                 <div className='nav-div'>

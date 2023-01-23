@@ -1,21 +1,14 @@
-
-.container .nav-btn{
-    margin: 0;
-}
-
-.create-acc {
-    text-decoration: underline;
-}
-
-.modal-label {
+.signup {
+    text-align: center;
     margin: 1em;
 }
 
-.modal-label input {
+.signup input {
+    margin: 1em;
     color: black;
 }
 
-.button-login {
+.sign-button {
     font-family: SourceCodePro;
   padding: 0.6em 2em;
   border: none;
@@ -31,7 +24,7 @@
   touch-action: manipulation;
 }
 
-.button-login:after {
+.sign-button:after {
     z-index: -1;
     content: "";
     position: absolute;
