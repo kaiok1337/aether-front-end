@@ -6,8 +6,10 @@ import Nav from '../../components/Nav'
 import Spotify from 'react-spotify-embed'
 import LogIn from '../../components/LogIn';
 import './home.scss'
+import spotifyLogo from '../../images/spotify.png'
 
 function Home({setIsLoggedIn, isLoggedIn, user}) {
+  const [spotifyShow, setSpotifyShow] = useState(false)
     return(
     <div className="App">
       <div className="slider">
@@ -37,7 +39,18 @@ function Home({setIsLoggedIn, isLoggedIn, user}) {
       <h1 className="merch">M E R C H</h1>
       <h1>. . .</h1>
       <Product user={user}/>
-      <Spotify  link="https://open.spotify.com/artist/7Jtn7Qm47bezv1myVrZIZo?si=DOnmq_uIQ2CrgXuahmPncg" />
+      <div className='spotify-container'>
+        { !spotifyShow ?
+        <img src={spotifyLogo} className='spotify-icon' onClick={() => setSpotifyShow(!spotifyShow)}></img>
+        :
+        <div>
+          <Spotify link="https://open.spotify.com/artist/7Jtn7Qm47bezv1myVrZIZo?si=DOnmq_uIQ2CrgXuahmPncg" />
+          <h3 onClick={() => setSpotifyShow(!spotifyShow)}>^</h3>
+        </div>
+        
+        }
+      </div>
+      
     </div>
     )
 }

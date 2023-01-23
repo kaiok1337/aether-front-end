@@ -45,6 +45,17 @@ $animationSpeed: 40s;
 	}
 }
 
+.spotify-container{
+	position: fixed;
+	top: 1em;
+	left: 1em;
+	z-index: 0;
+}
+
+.spotify-icon {
+	width: 5em;
+}
+
 @media screen and (max-width: 480px) {
 	.slider {
 		height: 20em;
@@ -59,5 +70,14 @@ $animationSpeed: 40s;
 		width: fit-content;
 		height: 20em;
 	}
+
+	.spotify-container{
+		position: relative;
+		top: 0;
+		left: 0;
+	}
 	
+	.spotify-icon {
+		display: none;
+	}
 }
