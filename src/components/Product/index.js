@@ -37,7 +37,7 @@ function Product() {
             <div key={i} className="product-card" onClick={() => goToProduct(product._id)}>
               <h2>{product.name}</h2>
               <p>${product.price}</p>
-              <img src={product.imgUrl}/>
+              <img className='card-img' src={product.imgUrl}/>
             </div>
             )}
           </section>

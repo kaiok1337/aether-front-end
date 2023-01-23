@@ -33,17 +33,5 @@
 }
 
 @media screen and (max-width: 480px) {
-    .product-card img {
-      max-width: 15em;
-      height: fit-content;
-    }
-    .product-card {
-        width: 85%;
-        margin-bottom: 1em;
-        height: fit-content;
-    }
-
-    .card-container {
-        flex-direction: column;
-    }
+  
   }
