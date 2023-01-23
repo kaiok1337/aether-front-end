@@ -1,5 +1,5 @@
 import React from 'react';
-import './fonts/SourceCodePro-VariableFont_wght.ttf'
+import './fonts/Aboreto-Regular.ttf'
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';

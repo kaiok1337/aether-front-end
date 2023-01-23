@@ -40,13 +40,15 @@ function Cart({user, cartItems, setCartItems}) {
       console.log(cartItems)
     return(
         <main className='cart'>
-            <h1>CART</h1>
+            <h2>Shopping Cart</h2>
             { cartItems.map((product, i) =>
-            
-            <h1 key={i}>{product.name} x {product.quantity}</h1>
+            <div>
+              <h1 key={i}>{product.name} x {product.quantity}</h1>
+              <img src={product.imgUrl} />
+            </div>
             )}
             <h1>Total: {total}</h1>
-            <button onClick={() => {deleteCart()}}>CHECKOUT</button>
+            <button className='button-85' onClick={() => {deleteCart()}}>CHECKOUT</button>
         </main>
         
     )

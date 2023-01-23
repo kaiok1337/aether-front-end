@@ -1,9 +1,17 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 import './product.css'
 
 function Product() {
     const [info, setInfo] = useState([])
+    const navigate = useNavigate()
+
+    const goToProduct = (id) => {
+      navigate({
+        pathname: `/product/${id}`,
+      })
+    }
 
     async function getProductInfo() {
       const infoData = await axios.get("https://aether-web-store-api.herokuapp.com/products")
@@ -15,26 +23,6 @@ function Product() {
         await axios.delete(`https://aether-web-store-api.herokuapp.com/products/${id}`)
     }
 
-    async function addToCart(product){
-        const productToAdd = {
-            name: product.name,
-            price: product.price,
-            quantity: 1,
-            productId: product._id
-        }
-        console.log(productToAdd)
-        let bearerToken = localStorage.getItem('token')
-        const config = {
-          headers:{
-            Authorization: `Bearer ${bearerToken}`
-          }
-        };
-        
-        await axios.post("https://aether-web-store-api.herokuapp.com/cart", productToAdd, config)
-        
-      }
-    
-
     useEffect(() => {
         getProductInfo()
       }, [])
@@ -42,11 +30,11 @@ function Product() {
     console.log(info)
     return(
         <main>
-          <div className='line'></div>
+          
           <section className="card-container">
           
             { info.map((product, i) =>
-            <div key={i} className="product-card" onClick={() => {addToCart(product)}}>
+            <div key={i} className="product-card" onClick={() => goToProduct(product._id)}>
               <h2>{product.name}</h2>
               <p>${product.price}</p>
               <img src={product.imgUrl}/>

@@ -2,12 +2,16 @@
   text-align: center;
 }
 
+button {
+	
+}
+
 body {
   font-family: 'SourceCodePro';
 }
 
 body {
-	background: linear-gradient(-60deg, #a04225, #e63030, #918480, #010a08, #000000);
+	background: linear-gradient(-60deg, #070200, #870b0b, #685751, #010a08, #000000);
 	background-size: 400% 400%;
 	animation: gradient 45s ease infinite;
 	height: fit-content;

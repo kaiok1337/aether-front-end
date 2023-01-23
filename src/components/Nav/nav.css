@@ -20,7 +20,7 @@ nav, .nav-div {
     text-decoration: none;
     font-size: 1.6em;
     padding: 1em;
-    text-shadow: 5px 8px black;
+    text-shadow: 3.5px 3.5px black;
 }
 
 * {
@@ -34,5 +34,6 @@ nav, .nav-div {
 
     nav, .nav-div,.nav-main {
         flex-direction: column;
+        align-items: center;
     }
   }

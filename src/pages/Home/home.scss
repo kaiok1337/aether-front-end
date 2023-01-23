@@ -1,0 +1,44 @@
+$animationSpeed: 40s;
+
+// Animation
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%)}
+}
+
+
+// Styling
+.slider {
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	height: 500px;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+	margin-top: 4em;
+	width: 100%;
+	
+	.slide-track {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+		min-width: 200%;
+		position: absolute;
+	}
+	
+	.slide {
+		height: 100px;
+	}
+	
+	//pause on hover
+	&:hover {
+		.slide-track {
+			animation-play-state: paused;
+		}
+	}
+	
+	//hover efffect
+	.slide img {
+		width: 900px;
+	}
+}

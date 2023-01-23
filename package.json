@@ -12,8 +12,9 @@
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "react-spotify-embed": "^1.0.4"
+    "react-spotify-embed": "^1.0.4",
+    "sass": "^1.57.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

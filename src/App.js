@@ -7,6 +7,7 @@ import Nav from './components/Nav';
 import SignUp from './pages/SignUp';
 import Cart from './pages/Cart'
 import FourOhFour from './components/FourOhFour'
+import ProductDisplay from './pages/ProductDisplay'
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} user={user}/>}></Route>
         <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn}/>}></Route>
         <Route path="/" element={<Home user={user} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
+        <Route path="/product/:handle" element={<ProductDisplay />}></Route>
       </Routes>
     </main>
   );

@@ -36,6 +36,19 @@ export default function LogIn ({setIsLoggedIn , isLoggedIn}) {
         setIsOpen(false);
       }
     
+      const customStyles = {
+        content: {
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+          backgroundColor: 'black',
+          padding: '1em',
+        },
+      };
+    
 
     // redirect to home page if not logged in
     return (
@@ -46,11 +59,11 @@ export default function LogIn ({setIsLoggedIn , isLoggedIn}) {
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 contentLabel="Login Component"
+                style={customStyles}
             >
-            <button onClick={closeModal}>x</button>
             <form onSubmit={submitHandler}>
-                <div className="input-text">
-                    <label htmlFor='username'>Username</label>
+                <div className='modal-label'>
+                    <label htmlFor='username'>Username </label>
                     <input
                         type='text'
                         name='username'
@@ -58,7 +71,7 @@ export default function LogIn ({setIsLoggedIn , isLoggedIn}) {
                         value={formState.username} />
                 </div>
 
-                <div className="input-text">
+                <div className='modal-label'>
                     <label htmlFor='password'>Password</label>
                     <input
                         type='password'
@@ -67,7 +80,7 @@ export default function LogIn ({setIsLoggedIn , isLoggedIn}) {
                         value={formState.password} />
                 </div>
 
-                <button type='submit'className="button" >Login</button>
+                <button type='submit' className="button-login" >Login</button>
             </form>
             </Modal>
             
