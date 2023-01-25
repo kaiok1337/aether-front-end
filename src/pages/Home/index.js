@@ -1,14 +1,12 @@
 import axios from 'axios'
 import '../../App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Product from '../../components/Product'
-import Nav from '../../components/Nav'
 import Spotify from 'react-spotify-embed'
-import LogIn from '../../components/LogIn';
 import './home.scss'
 import spotifyLogo from '../../images/spotify.png'
 
-function Home({setIsLoggedIn, isLoggedIn, user}) {
+function Home({ user }) {
   const [spotifyShow, setSpotifyShow] = useState(false)
     return(
     <div className="App">

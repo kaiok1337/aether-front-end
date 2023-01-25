@@ -1,7 +1,7 @@
 import './nav.css'
 import LogIn from '../LogIn'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import logo from '../../images/logo.PNG'
 
 function Nav({setUser, isLoggedIn, setIsLoggedIn, setToken, token}) {

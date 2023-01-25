@@ -44,12 +44,11 @@ export default function ProductDisplay({isLoggedIn}) {
                 </div>
                 
                 <img className="product-img" src={product.imgUrl}/>
+
                 { isLoggedIn ?
-                <button className='add-to-cart' onClick={() => addToCart(product)}>Add to cart</button>
+                  <button className='add-to-cart' onClick={() => addToCart(product)}>Add to cart</button>
                 : null}
             </div>
         </main>
-        
-
     )
 }
